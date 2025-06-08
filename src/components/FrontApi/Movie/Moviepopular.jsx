@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getPopularMovies } from "/Users/Usuario/Desktop/Practica/ApiPeliculas/Apipeliculas/src/Api/moviesApi";
+import { getPopularMovies } from "../../../Api/moviesApi";
 import ModalMedia from "./ModalMedia";
 
 export default function MoviePopular() {
@@ -41,7 +41,6 @@ export default function MoviePopular() {
         setIsModalOpen(true);
     };
 
-    // Cierra el modal
     const closeModal = () => {
         setIsModalOpen(false);
         setSelectedMovie(null);
@@ -58,7 +57,6 @@ export default function MoviePopular() {
                         className="min-w-[150px] w-80 flex flex-col rounded-lg bg-gray-900 overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 cursor-pointer"
                         onClick={() => openModal(movie)} // Abre el modal al hacer clic
                     >
-                        {/* Contenedor de imagen con relación de aspecto 2:3 */}
                         <div className="aspect-[2/3] relative">
                             <img
                                 src={`https://image.tmdb.org/t/p/w500${ movie.poster_path }`}
@@ -68,7 +66,6 @@ export default function MoviePopular() {
                             />
                         </div>
 
-                        {/* Contenido de texto */}
                         <div className="p-4 flex flex-col gap-2">
                             <h3 className="text-white font-bold text-lg truncate">
                                 {movie.title}

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { searchMovies } from "/Users/Usuario/Desktop/Practica/ApiPeliculas/Apipeliculas/src/Api/moviesApi";
+import { searchMovies } from "../../Api/moviesApi";
 import { Link, useNavigate } from "react-router-dom";
 
 
@@ -40,7 +40,9 @@ export default function Header() {
                         <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24">
                             <path stroke="currentColor" strokeWidth="1.5" d="M5 12h14M12 5l7 7-7 7" />
                         </svg>
-                        <span className="ml-2 text-white text-lg font-semibold">ApiPeliculas</span>
+                        <span className="ml-2 text-white text-lg font-semibold">ApiPeliculas
+                            <Link to="/" className="text-white hover:text-gray-200">Home</Link>
+                        </span>
                     </a>
                     <form className="hidden lg:flex flex-grow max-w-md">
                         <input
@@ -72,11 +74,7 @@ export default function Header() {
                           
                         </li>
 
-                        <li className="relative group">
-                             <Link to="/series" className="text-white hover:text-gray-200">Series</Link>
-                          
-                        </li>
-                        <Link to="/tv" className="text-white hover:text-gray-200">TV</Link>
+                        <Link to="/tv" className="text-white hover:text-gray-200">TV series</Link>
                     </ul>
                 </div>
             </nav>

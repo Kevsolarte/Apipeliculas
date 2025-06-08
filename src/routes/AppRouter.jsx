@@ -13,7 +13,8 @@ const AppRouter = () => {
       <Route path="/movies" element={<MoviesPage />} />
       <Route path="/series" element={<SeriesPage />} />
       <Route path="/tv" element={<TVPage />} />
-      <Route path="/media/:id" element={<MediaDetailPage />} />
+      <Route path="/media/:type/:id" element={<MediaDetailPage />} />
+
     </Routes>
   );
 };
